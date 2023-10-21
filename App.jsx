@@ -1,15 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainScreen from './src/screens/MainScreen';
+import OtherScreen from './src/screens/OtherScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Locations...</Text>
-      <Text style={styles.text}>With Navigation!</Text>
+    <>
       <StatusBar style='light' />
-    </View>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name='MainScreen' component={MainScreen} />
+          <Stack.Screen name='OtherScreen' component={OtherScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 }
 

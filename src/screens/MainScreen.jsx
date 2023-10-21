@@ -1,12 +1,29 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 
-export default function MainScreen() {
+import MainButton from '../components/MainButton';
+
+export default function MainScreen({ navigation }) {
+  function pressHandler() {
+    navigation.navigate('OtherScreen');
+  }
+
   return (
-    <View>
-      <Text>MainScreen</Text>
+    <View style={styles.container}>
+      <MainButton
+        whenPressed={() => {
+          pressHandler();
+        }}
+      />
     </View>
-  )
+  );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#1b1919',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
