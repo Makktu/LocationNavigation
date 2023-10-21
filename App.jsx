@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+import MainScreen from './src/screens/MainScreen';
+
 export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Locations...</Text>
       <Text style={styles.text}>With Navigation!</Text>
-      <StatusBar style='dark' />
+      <StatusBar style='light' />
     </View>
   );
 }
