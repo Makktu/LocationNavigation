@@ -22,7 +22,7 @@ export default function MainScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1b1919',
+    backgroundColor: '#7a5959',
     alignItems: 'center',
     justifyContent: 'center',
   },

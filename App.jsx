@@ -4,18 +4,21 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainScreen from './src/screens/MainScreen';
 import OtherScreen from './src/screens/OtherScreen';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <>
-      <StatusBar style='light' />
       <NavigationContainer>
+        {/* <SafeAreaView> */}
+        <StatusBar style='light' />
         <Stack.Navigator>
           <Stack.Screen name='MainScreen' component={MainScreen} />
           <Stack.Screen name='OtherScreen' component={OtherScreen} />
         </Stack.Navigator>
+        {/* </SafeAreaView> */}
       </NavigationContainer>
     </>
   );
@@ -24,7 +27,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#443f3f',
+    backgroundColor: '#141313',
     alignItems: 'center',
     justifyContent: 'center',
   },
